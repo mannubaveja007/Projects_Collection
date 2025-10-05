@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Master</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔢</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><span class="icon">🔢</span> Sudoku Master</h1>
+            <p>Challenge your mind with the classic number puzzle!</p>
+        </header>
+
+        <div class="game-controls">
+            <div class="control-group">
+                <label for="difficulty">Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <button id="new-game-btn">New Game</button>
+            <div class="theme-switcher">
+                <label for="theme-switch">Dark Mode</label>
+                <label class="switch">
+                    <input type="checkbox" id="theme-switch">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+
+        <main class="game-area">
+            <div id="sudoku-board"></div>
+            <div class="game-info">
+                <div id="timer">Time: 00:00</div>
+                <div class="action-buttons">
+                    <button id="check-solution-btn">Check Solution</button>
+                    <button id="reset-btn">Reset Board</button>
+                    <button id="hint-btn">Get a Hint</button>
+                </div>
+            </div>
+        </main>
+
+        <section class="stats-section">
+            <h2>Statistics</h2>
+            <div id="stats-container">
+                <p>Puzzles Solved: <span id="puzzles-solved">0</span></p>
+                <p>Fastest Time (Medium): <span id="fastest-time">N/A</span></p>
+                <p>Total Time Played: <span id="total-time">0m 0s</span></p>
+            </div>
+            <button id="reset-stats-btn">Reset Stats</button>
+        </section>
+    </div>
+
+    <div id="reset-modal" class="modal">
+        <div class="modal-content">
+            <h2>Confirm Reset</h2>
+            <p>Are you sure you want to clear all your entries?</p>
+            <div class="modal-buttons">
+                <button id="confirm-reset-btn">Yes, Reset</button>
+                <button id="cancel-reset-btn">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="success-modal" class="modal">
+        <div class="modal-content">
+            <h2>Congratulations!</h2>
+            <p>You have solved the puzzle correctly!</p>
+            <div class="modal-buttons">
+                <button id="close-success-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
