@@ -1,0 +1,263 @@
+:root {
+    --bg-color: #f4f7f9;
+    --text-color: #333;
+    --board-bg: #fff;
+    --border-color: #ccc;
+    --primary-color: #007bff;
+    --primary-hover: #0056b3;
+    --error-color: #dc3545;
+    --success-color: #28a745;
+    --prefilled-color: #495057;
+    --prefilled-bg: #e9ecef;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --modal-bg: rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode {
+    --bg-color: #1a1a1a;
+    --text-color: #f1f1f1;
+    --board-bg: #2c2c2c;
+    --border-color: #555;
+    --primary-color: #0d6efd;
+    --primary-hover: #0a58ca;
+    --error-color: #f85149;
+    --success-color: #198754;
+    --prefilled-color: #f1f1f1;
+    --prefilled-bg: #4a4a4a;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    background: var(--board-bg);
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: background-color 0.3s;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+header h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.game-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.control-group, .theme-switcher {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+select, button {
+    padding: 8px 15px;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+button:hover {
+    background-color: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+.game-area {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#sudoku-board {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    width: 100%;
+    max-width: 450px;
+    aspect-ratio: 1 / 1;
+    border: 3px solid var(--text-color);
+    border-radius: 5px;
+}
+
+.cell {
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--border-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(1rem, 4vw, 1.8rem);
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.cell input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    text-align: center;
+    font-size: inherit;
+    font-weight: inherit;
+    background-color: transparent;
+    color: var(--primary-color);
+    padding: 0;
+}
+
+.cell input:focus {
+    outline: 2px solid var(--primary-color);
+    background-color: var(--bg-color);
+}
+
+.cell.pre-filled {
+    background-color: var(--prefilled-bg);
+    color: var(--prefilled-color);
+    font-weight: bold;
+}
+
+.cell.error {
+    background-color: var(--error-color) !important;
+    color: white;
+    animation: shake 0.5s;
+}
+
+.cell.hint {
+    background-color: var(--success-color);
+    color: white;
+    animation: pop 0.3s;
+}
+
+/* ADD THESE NEW RULES IN THEIR PLACE */
+.cell.border-right {
+    border-right: 2px solid var(--text-color);
+}
+.cell.border-bottom {
+    border-bottom: 2px solid var(--text-color);
+}
+
+.game-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+#timer {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    background-color: var(--prefilled-bg);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stats-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+#stats-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+/* Theme Switcher */
+.switch { position: relative; display: inline-block; width: 50px; height: 28px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; }
+.slider:before { position: absolute; content: ""; height: 20px; width: 20px; left: 4px; bottom: 4px; background-color: white; transition: .4s; }
+input:checked + .slider { background-color: var(--primary-color); }
+input:checked + .slider:before { transform: translateX(22px); }
+.slider.round { border-radius: 34px; }
+.slider.round:before { border-radius: 50%; }
+
+/* Modal styles */
+.modal {
+    display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: var(--modal-bg);
+}
+.modal-content {
+    background-color: var(--board-bg); margin: 15% auto; padding: 25px; border: 1px solid var(--border-color); width: 90%; max-width: 400px; border-radius: 8px; text-align: center; animation: slide-down 0.4s ease-out;
+}
+.modal-buttons { margin-top: 20px; display: flex; justify-content: center; gap: 15px; }
+
+/* Animations */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+@keyframes pop {
+  0% { transform: scale(0.8); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+@keyframes slide-down {
+  from { top: -100px; opacity: 0; }
+  to { top: 0; opacity: 1; }
+}
+
+@media (max-width: 768px) {
+    body { padding: 10px; }
+    .container { padding: 15px; }
+    header h1 { font-size: 2rem; }
+    .game-area { flex-direction: column; align-items: center; }
+    .game-info { width: 100%; max-width: 450px; }
+    .action-buttons { flex-direction: row; justify-content: space-around; }
+}
