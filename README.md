@@ -3,6 +3,8 @@
 Drop your project here — big or small, serious or fun.  
 Anyone on the internet can explore, learn, and use it.
 
+Must check contrubutors.md file to know more
+
 ## 🚀 How to Share
 
 1. Fork this repo  
