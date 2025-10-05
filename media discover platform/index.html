@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Discovery Platform</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+ 
+    <nav class="navbar">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <a href="#" class="logo">MediaHub</a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#trending">Trending</a></li>
+            <li><a href="#shows">Shows</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+        </ul>
+    </nav>
+
+   <!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1 class="hero-title">CineVerse</h1>
+            <p class="hero-subtitle">Your Gateway to Cinematic Wonders</p>
+            <p class="hero-description">Discover, explore, and enjoy the finest collection of movies and TV shows from 
+            around the globe. Personalized recommendations just for you.</p>
+            <a href="#trending" class="cta-button">
+                Explore Trending
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+        <div class="hero-image">
+            <svg class="movie-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- Film Strip -->
+                <rect x="30" y="30" width="140" height="140" rx="10" fill="#3a0ca3" />
+                
+                <!-- Film Perforations -->
+                <rect x="25" y="40" width="5" height="120" fill="#f8f9fa" />
+                <rect x="170" y="40" width="5" height="120" fill="#f8f9fa" />
+                
+                <!-- Movie Frames -->
+                <rect x="40" y="45" width="50" height="30" rx="2" fill="#7209b7" class="frame-1" />
+                <rect x="110" y="45" width="50" height="30" rx="2" fill="#f72585" class="frame-2" />
+                <rect x="40" y="85" width="50" height="30" rx="2" fill="#4cc9f0" class="frame-3" />
+                <rect x="110" y="85" width="50" height="30" rx="2" fill="#4895ef" class="frame-4" />
+                <rect x="40" y="125" width="50" height="30" rx="2" fill="#560bad" class="frame-5" />
+                <rect x="110" y="125" width="50" height="30" rx="2" fill="#b5179e" class="frame-6" />
+                
+                <!-- Play Button -->
+                <circle cx="100" cy="100" r="20" fill="rgba(255,255,255,0.2)" class="pulse" />
+                <polygon points="92,90 92,110 110,100" fill="#fff" />
+            </svg>
+        </div>
+    </div>
+</section>
+
+    <section id="trending" class="trending section-container">
+    <h2 class="section-title">Trending Movies</h2>
+    <p class="section-subtitle">What's hot this week</p>
+    <div class="movie-cards">
+   
+        <div class="movie-card">
+            <img src="dune.jpg" alt="Dune" class = "movie-poster" width="300" height="200">
+            <div class="movie-info">
+                <h3 class="movie-title">Dune: Part Two</h3>
+                <p class="movie-desc">Paul Atreides unites with the Fremen to seek revenge against those who destroyed his family.</p>
+                <span class="movie-duration">2h 46m</span>
+            </div>
+        </div>
+        
+        <div class="movie-card">
+            <img src="Oppenheimer.jpg" alt="Oppenheimer" class = "movie-poster" width="300" height="200">
+            <div class="movie-info">
+                <h3 class="movie-title">Oppenheimer</h3>
+                <p class="movie-desc">The story of American scientist J. Robert Oppenheimer and his role in developing the atomic bomb.</p>
+                <span class="movie-duration">3h</span>
+            </div>
+        </div>
+        
+      
+        <div class="movie-card">
+             <img src="batman.jpg" alt="The Batman" class = "movie-poster" width="300" height="200">
+            <div class="movie-info">
+                <h3 class="movie-title">The Batman</h3>
+                <p class="movie-desc">Batman uncovers corruption in Gotham City while pursuing the Riddler.</p>
+                <span class="movie-duration">2h 56m</span>
+            </div>
+        </div>
+        
+        <div class="movie-card">
+              <img src="4.jpg" alt="Everything Everywhere All at Once" class = "movie-poster" width="300" height="200">
+            <div class="movie-info">
+                <h3 class="movie-title">Everything Everywhere All at Once</h3>
+                <p class="movie-desc">A middle-aged Chinese immigrant is swept up in an insane adventure.</p>
+                <span class="movie-duration">2h 19m</span>
+            </div>
+        </div>
+        
+        <div class="movie-card">
+              <img src="5.jpg" alt="Top Gun: Maverick" class = "movie-poster" width="300" height="200">
+            <div class="movie-info">
+                <h3 class="movie-title">Top Gun: Maverick</h3>
+                <p class="movie-desc">After thirty years, Maverick is still pushing the envelope as a top naval aviator.</p>
+                <span class="movie-duration">2h 11m</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="shows" class="popular-shows section-container">
+    <h2 class="section-title">Must-Watch Series</h2>
+    <p class="section-subtitle">Binge-worthy shows everyone's talking about</p>
+    
+    <div class="series-cards">
+        <div class="series-card">
+            <img src="Stranger Things.jpeg" alt="Stranger Things" class="series-poster">
+            <div class="series-info">
+                <h3 class="series-title">Stranger Things</h3>
+                <p class="series-genre">Sci-Fi, Horror, Drama</p>
+                <p class="series-meta">4 Seasons • 34 Episodes</p>
+                <p class="series-synopsis">When a young boy vanishes, a small town uncovers a mystery involving secret experiments...</p>
+                <div class="series-actions">
+                    <label for="modal-1" class="learn-more-btn">Learn More</label>
+                </div>
+            </div>
+        </div>
+        <div class="series-card">
+            <img src="The Last of Us.jpg" alt="The Last of Us" class="series-poster">
+            <div class="series-info">
+                <h3 class="series-title">The Last of Us</h3>
+                <p class="series-genre">Action, Adventure, Drama</p>
+                <p class="series-meta">1 Season • 9 Episodes</p>
+                <p class="series-synopsis">After a global pandemic destroys civilization, a hardened survivor takes charge of a 14-year-old girl...</p>
+                <div class="series-actions">
+                    <label for="modal-2" class="learn-more-btn">Learn More</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="series-card">
+            <img src="TheMandalorian.jpg" alt="The Mandalorian" class="series-poster">
+            <div class="series-info">
+                <h3 class="series-title">The Mandalorian</h3>
+                <p class="series-genre">Sci-Fi, Western, Action</p>
+                <p class="series-meta">3 Seasons • 24 Episodes</p>
+                <p class="series-synopsis">The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority...</p>
+                <div class="series-actions">
+                    <label for="modal-3" class="learn-more-btn">Learn More</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="series-card">
+            <img src="Wednesday.jpg" alt="Wednesday" class="series-poster">
+            <div class="series-info">
+                <h3 class="series-title">Wednesday</h3>
+                <p class="series-genre">Comedy, Crime, Fantasy</p>
+                <p class="series-meta">1 Season • 8 Episodes</p>
+                <p class="series-synopsis">Follows Wednesday Addams' years as a student, as she masters her psychic abilities...</p>
+                <div class="series-actions">
+                    <label for="modal-4" class="learn-more-btn">Learn More</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<input class="modal-state" id="modal-1" type="checkbox" />
+<div class="modal">
+    <label class="modal-bg" for="modal-1"></label>
+    <div class="modal-body">
+        <label class="modal-close" for="modal-1">×</label>
+        <div class="modal-content">
+            <img src="fraser_strangerthings.jpg" alt="Stranger Things" class="modal-poster">
+            <div class="modal-details">
+                <h2>Stranger Things</h2>
+                <p class="modal-meta">4 Seasons • 34 Episodes • 2016-Present</p>
+                <p class="modal-genre">Sci-Fi, Horror, Drama</p>
+                <div class="modal-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>8.7/10 (IMDb)</span>
+                </div>
+                <p class="modal-synopsis">When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl. Set in the 1980s, this thrilling Netflix original follows a group of kids as they confront terrifying forces of evil and the corrupt adults who let it happen.</p>
+                <div class="modal-cast">
+                    <strong>Cast:</strong> Millie Bobby Brown, Finn Wolfhard, Winona Ryder, David Harbour
+                </div>
+                <button class="watch-now-btn">Watch Now on Netflix</button>
+            </div>
+        </div>
+    </div>
+</div>
+<input class="modal-state" id="modal-2" type="checkbox" />
+<div class="modal">
+    <label class="modal-bg" for="modal-2"></label>
+    <div class="modal-body">
+        <label class="modal-close" for="modal-2">×</label>
+        <div class="modal-content">
+            <img src="3.avif" alt="The Last of Us" class="modal-poster">
+            <div class="modal-details">
+                <h2>The Last of Us</h2>
+                <p class="modal-meta">1 Season • 9 Episodes • 2023-Present</p>
+                <p class="modal-genre">Action, Adventure, Drama</p>
+                <div class="modal-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>9.1/10 (IMDb)</span>
+                </div>
+                <p class="modal-synopsis">After a global pandemic destroys civilization, a hardened survivor takes charge of a 14-year-old girl who may be humanity's last hope. Based on the acclaimed video game, this HBO adaptation follows Joel and Ellie as they journey across post-apocalyptic America.</p>
+                <div class="modal-cast">
+                    <strong>Cast:</strong> Pedro Pascal, Bella Ramsey, Gabriel Luna, Anna Torv
+                </div>
+                <button class="watch-now-btn">Watch Now on HBO Max</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input class="modal-state" id="modal-3" type="checkbox" />
+<div class="modal">
+    <label class="modal-bg" for="modal-3"></label>
+    <div class="modal-body">
+        <label class="modal-close" for="modal-3">×</label>
+        <div class="modal-content">
+            <img src="OIP.jpeg" alt="The Mandalorian" class="modal-poster">
+            <div class="modal-details">
+                <h2>The Mandalorian</h2>
+                <p class="modal-meta">3 Seasons • 24 Episodes • 2019-Present</p>
+                <p class="modal-genre">Sci-Fi, Western, Action</p>
+                <div class="modal-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span>8.7/10 (IMDb)</span>
+                </div>
+                <p class="modal-synopsis">The travels of a lone bounty hunter in the outer reaches of the galaxy, far from the authority of the New Republic. After being hired to retrieve "The Child," Din Djarin becomes the unlikely protector of Grogu, a mysterious alien with a strong connection to the Force.</p>
+                <div class="modal-cast">
+                    <strong>Cast:</strong> Pedro Pascal, Giancarlo Esposito, Carl Weathers, Gina Carano
+                </div>
+                <button class="watch-now-btn">Watch Now on Disney+</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input class="modal-state" id="modal-4" type="checkbox" />
+<div class="modal">
+    <label class="modal-bg" for="modal-4"></label>
+    <div class="modal-body">
+        <label class="modal-close" for="modal-4">×</label>
+        <div class="modal-content">
+            <img src="Wednesday1.jpg" alt="Wednesday" class="modal-poster">
+            <div class="modal-details">
+                <h2>Wednesday</h2>
+                <p class="modal-meta">1 Season • 8 Episodes • 2022-Present</p>
+                <p class="modal-genre">Comedy, Crime, Fantasy</p>
+                <div class="modal-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span>8.2/10 (IMDb)</span>
+                </div>
+                <p class="modal-synopsis">Follows Wednesday Addams' years as a student at Nevermore Academy, where she attempts to master her emerging psychic ability, thwart a monstrous killing spree that has terrorized the local town, and solve the supernatural mystery that affected her family 25 years ago.</p>
+                <div class="modal-cast">
+                    <strong>Cast:</strong> Jenna Ortega, Catherine Zeta-Jones, Luis Guzmán, Gwendoline Christie
+                </div>
+                <button class="watch-now-btn">Watch Now on Netflix</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section id="reviews" class="user-reviews section-container">
+    <h2 class="section-title">User Reviews</h2>
+    <p class="section-subtitle">What our community is saying</p>
+    
+    <div class="reviews-container">
+        <div class="review-cards">
+            <div class="review-card">
+                <div class="reviewer-info">
+                    <img src=" " alt="John D." class="reviewer-avatar">
+                    <div class="reviewer-meta">
+                        <h4 class="reviewer-name">John D.</h4>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.5/5</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="review-text">"Absolutely loved the character development in Stranger Things! The new season exceeded all my expectations. Can't wait for more!"</p>
+                <p class="review-date">Posted 2 weeks ago</p>
+            </div>
+            <div class="review-card">
+                <div class="reviewer-info">
+                    <img src=" " alt="Sarah M." class="reviewer-avatar">
+                    <div class="reviewer-meta">
+                        <h4 class="reviewer-name">Sarah M.</h4>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>4/5</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="review-text">"The Last of Us adaptation is phenomenal. The cinematography and performances are outstanding, though I wish they included more from the game."</p>
+                <p class="review-date">Posted 5 days ago</p>
+            </div>
+            <div class="review-card">
+                <div class="reviewer-info">
+                    <img src=" " alt="Alex R." class="reviewer-avatar">
+                    <div class="reviewer-meta">
+                        <h4 class="reviewer-name">Alex R.</h4>
+                        <div class="review-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>5/5</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="review-text">"Wednesday is the perfect blend of dark humor and mystery. Jenna Ortega's performance is incredible! Binged the whole season in one weekend."</p>
+                <p class="review-date">Posted 1 month ago</p>
+            </div>
+        </div>
+        <div class="review-form-container">
+            <h3 class="form-title">Share Your Thoughts</h3>
+            <form class="review-form">
+                <div class="form-group">
+                    <label for="reviewer-name">Your Name</label>
+                    <input type="text" id="reviewer-name" placeholder="Enter your name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="reviewer-email">Email Address</label>
+                    <input type="email" id="reviewer-email" placeholder="Enter your email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Your Rating</label>
+                    <div class="star-rating">
+                        <input type="radio" id="star5" name="rating" value="5">
+                        <label for="star5"><i class="fas fa-star"></i></label>
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4"><i class="fas fa-star"></i></label>
+                        <input type="radio" id="star3" name="rating" value="3">
+                        <label for="star3"><i class="fas fa-star"></i></label>
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2"><i class="fas fa-star"></i></label>
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1"><i class="fas fa-star"></i></label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="review-text">Your Review</label>
+                    <textarea id="review-text" rows="5" placeholder="Share your thoughts about the movie or show..." required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="review-media">Which movie/show are you reviewing?</label>
+                    <select id="review-media" required>
+                        <option value="" disabled selected>Select a title</option>
+                        <option value="stranger-things">Stranger Things</option>
+                        <option value="last-of-us">The Last of Us</option>
+                        <option value="mandalorian">The Mandalorian</option>
+                        <option value="wednesday">Wednesday</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="submit-review-btn">Submit Review</button>
+            </form>
+        </div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-social">
+            <h3>Connect With Us</h3>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="https://example.com/terms" target="_blank" rel="noopener noreferrer">Terms of Service</a></li>
+                <li><a href="https://example.com/privacy" target="_blank" rel="noopener noreferrer">Privacy Policy</a></li>
+                <li><a href="https://example.com/cookies" target="_blank" rel="noopener noreferrer">Cookie Policy</a></li>
+                <li><a href="https://example.com/faq" target="_blank" rel="noopener noreferrer">FAQ</a></li>
+                <li><a href="https://example.com/contact" target="_blank" rel="noopener noreferrer">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-newsletter">
+            <h3>Stay Updated</h3>
+            <p>Subscribe to our newsletter for the latest updates</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="copyright">
+            &copy; 2023 MediaHub. All rights reserved.
+        </div>
+        <a href="#top" class="back-to-top" aria-label="Back to top">
+            <i class="fas fa-arrow-up"></i>
+        </a>
+    </div>
+</footer>
+</body>
+</html>
