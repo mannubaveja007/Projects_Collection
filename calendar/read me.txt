@@ -1,0 +1,52 @@
+# Event Calendar App
+
+Description
+This is an Event Calendar app where users can view, add, and delete events on a calendar. The app allows users to schedule events, view events for a specific day. Additionally, the app includes browser notifications for scheduled events and a snooze feature.
+
+## Features
+- View and add events on a calendar.
+- Create new events with a title, date, time, and description.
+- View events for the selected date.
+- Delete events.
+- Notifications for scheduled events with the option to snooze for 5 minutes.
+- Responsive and user-friendly UI.
+
+## Technologies Used
+- **React**: Frontend framework for building the user interface.
+- **React-Calendar**: A calendar component to display the events.
+- **Browser Notifications API**: For sending event notifications.
+- **JavaScript**: For logic and functionality.
+
+## Setup Instructions
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/shubh-gitpush/calendar.git
+    ```
+
+2. Navigate to the project folder:
+
+    ```bash
+    cd event-calendar-app
+    ```
+
+3. Install dependencies:
+
+    Make sure you have [Node.js](https://nodejs.org/) installed. Then, run the following command to install the necessary dependencies:
+
+    ```bash
+    npm install
+    ```
+
+4. Start the application:
+
+    Once the dependencies are installed, you can start the development server:
+
+    ```bash
+    npm start
+    ```
+
+    This will run the app in development mode and open it in your browser at [http://localhost:3000](http://localhost:3000).
+
+
