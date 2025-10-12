@@ -1,0 +1,51 @@
+Subject: Web Scraping Project Submission
+
+Dear sir/mam,
+
+I am pleased to submit my web scraping project, which I completed within 24 hours. Below are the instructions for running and verifying the project. If there are any errors or additional changes required, please let me know.
+
+Running the Project
+Django Setup:
+
+Navigate to the directory containing manage.py:
+
+\web_scrapping\scrap\scrap\spiders\scrapper\django\product_api
+Run the Django development server:
+
+"python manage.py runserver" in terminal
+React Setup:
+
+Navigate to the directory containing app.js:
+
+\web_scrapping\scrap\scrap\spiders\scrapper\product_frontend\src
+Start the React application:
+"npm start" in terminal
+Please ensure that both Django and React are running simultaneously.
+
+Scrapy Configuration
+Data Location:
+The scraped data will be saved to output1.json at:
+
+
+\scrap\my_new_scrapy_project\my_new_scrapy_project\spiders\output1.json
+
+Scrapy Spider:
+The Python file for the Scrapy spider is nobero_spider.py, located at:
+
+\scrap\my_new_scrapy_project\my_new_scrapy_project\spiders\nobero_spider.py
+
+Important
+If the JSON data has not been imported into the Django schema, please run the following command to load the data:
+
+
+python manage.py load_products D:\intern\web_scraping\scrap\my_new_scrapy_project\my_new_scrapy_project\spiders\output1.json
+Dependencies
+Please ensure that you have installed the necessary libraries and dependencies, including npm, Django, and Django REST framework, to ensure the project runs smoothly.
+
+If you have any questions or require further adjustments, please feel free to contact me. I have also uploaded screenshots of the working models for your reference.
+
+
+
+Best regards,
+Shubh Rai
+
