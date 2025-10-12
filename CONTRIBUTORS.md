@@ -11,4 +11,5 @@ This space grows because of you 💫
 
 ## 🌟 Contributors List
 
+- [Parwaaz Joshi](https://github.com/joshi-parwaaz) - Ultimate Tic-Tac-Toe Game
 - [Your Name](https://github.com/your-username)
