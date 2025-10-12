@@ -1,0 +1,11 @@
+# VSCode
+.vscode/
+
+# Mac system files
+.DS_Store
+
+# windows system files
+*.exe
+
+# Node Modules
+node_modules
