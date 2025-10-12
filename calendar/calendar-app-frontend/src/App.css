@@ -1,0 +1,103 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.calendar-ui {
+  margin: 20px;
+}
+
+.event-list {
+  margin-top: 20px;
+}
+
+.event-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.event-list li {
+  margin-bottom: 10px;
+}
+
+.event-list li img,
+.event-list li video {
+  max-width: 200px;
+  margin-top: 10px;
+}
+
+.event-form {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  width: 300px;
+  background-color: #f9f9f9;
+}
+
+.event-form h2 {
+  text-align: center;
+}
+
+.event-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.event-form div {
+  margin-bottom: 10px;
+}
+
+.event-form label {
+  font-weight: bold;
+}
+
+.event-form input, .event-form textarea {
+  padding: 8px;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.event-form button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.event-form button:hover {
+  background-color: #0056b3;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
