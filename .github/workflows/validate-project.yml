@@ -1,0 +1,39 @@
+name: Validate Project Submission
+
+on:
+  pull_request:
+    paths:
+      - 'projects/**'
+      - 'project-list.md'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate project structure
+        run: |
+          echo " Checking new files..."
+          CHANGED_FILES=$(git diff --name-only origin/main...HEAD)
+
+          # Ensure new files are only inside projects/
+          INVALID_FILES=$(echo "$CHANGED_FILES" | grep -vE '^(projects/|project-list\.md)' || true)
+          if [ -n "$INVALID_FILES" ]; then
+            echo " Invalid files detected outside 'projects/':"
+            echo "$INVALID_FILES"
+            exit 1
+          fi
+
+          # Check each new project folder for README.md
+          NEW_FOLDERS=$(git diff --name-only --diff-filter=A origin/main...HEAD | grep '^projects/' | cut -d/ -f2 | uniq)
+          for dir in $NEW_FOLDERS; do
+            if [ ! -f "projects/$dir/README.md" ]; then
+              echo " Missing README.md in projects/$dir"
+              exit 1
+            fi
+          done
+
+          echo " All checks passed successfully!"
