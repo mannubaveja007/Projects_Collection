@@ -14,18 +14,17 @@ Hii, I am your go-to platform for all your legal queries. We have embedded the e
 5. Streamlit (for Web UI Interface)
 
 ### Screenshots
-![ss1](https://github.com/keshav-agrawal595/SahiJawab_AI_Legal_Chatbot/assets/59056315/1006b528-314d-4785-9853-994d513f9ab3)
+![alt text](demo_shots/ss1.png)
 
-![sp_1](https://github.com/keshav-agrawal595/SahiJawab_AI_Legal_Chatbot/assets/59056315/9981b31e-5764-461c-8a83-85cbab1f5834)
+![sp_1](demo_shots/sp_1.png)
 
-
-![gif_1_doc_embed](https://github.com/keshav-agrawal595/SahiJawab_AI_Legal_Chatbot/assets/59056315/9dec3981-9b8b-4962-bb6d-ccce2dc4300b)
-
-
-![record_ques_name](https://github.com/keshav-agrawal595/SahiJawab_AI_Legal_Chatbot/assets/59056315/64a0ab0c-407f-4ab0-8c06-c40bb218956d)
+![gif_1_doc_embed](demo_shots/gif_1_doc_embed.gif)
 
 
+![record_ques_name](demo_shots/record_ques_name.gif)
 
-![record_ques_start](https://github.com/keshav-agrawal595/SahiJawab_AI_Legal_Chatbot/assets/59056315/e9cee108-15a8-4eee-b974-d0552f73d8ba)
+
+
+![record_ques_start](demo_shots/record_ques_start.gif)
 
 
