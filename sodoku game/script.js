@@ -192,30 +192,46 @@ function renderBoard() {
 
         if (!value) return;
 
+        // Cache all cells to avoid repeated DOM queries
+        const allCells = document.querySelectorAll('.cell');
+        const cellMap = new Map();
+        allCells.forEach(c => {
+            const r = parseInt(c.dataset.row);
+            const colNum = parseInt(c.dataset.col);
+            const key = `${r},${colNum}`;
+            cellMap.set(key, c);
+        });
+
+        // Check row conflicts
         for (let i = 0; i < 9; i++) {
             if (i !== col) {
-                const peer = document.querySelector(`.cell[data-row="${row}"][data-col="${i}"]`);
-                if ((peer.textContent || peer.querySelector('input')?.value) == value) {
-                    cell.classList.add('error');
-                    peer.classList.add('error');
-                }
-            }
-            if (i !== row) {
-                const peer = document.querySelector(`.cell[data-row="${i}"][data-col="${col}"]`);
-                 if ((peer.textContent || peer.querySelector('input')?.value) == value) {
+                const peer = cellMap.get(`${row},${i}`);
+                if (peer && (peer.textContent || peer.querySelector('input')?.value) == value) {
                     cell.classList.add('error');
                     peer.classList.add('error');
                 }
             }
         }
         
+        // Check column conflicts
+        for (let i = 0; i < 9; i++) {
+            if (i !== row) {
+                const peer = cellMap.get(`${i},${col}`);
+                if (peer && (peer.textContent || peer.querySelector('input')?.value) == value) {
+                    cell.classList.add('error');
+                    peer.classList.add('error');
+                }
+            }
+        }
+        
+        // Check 3x3 box conflicts
         const startRow = row - row % 3;
         const startCol = col - col % 3;
         for (let i = 0; i < 3; i++) {
             for (let j = 0; j < 3; j++) {
                 if ((startRow + i !== row) || (startCol + j !== col)) {
-                   const peer = document.querySelector(`.cell[data-row="${startRow + i}"][data-col="${startCol + j}"]`);
-                   if ((peer.textContent || peer.querySelector('input')?.value) == value) {
+                   const peer = cellMap.get(`${startRow + i},${startCol + j}`);
+                   if (peer && (peer.textContent || peer.querySelector('input')?.value) == value) {
                         cell.classList.add('error');
                         peer.classList.add('error');
                     }
@@ -244,9 +260,19 @@ function renderBoard() {
         let isCorrect = true;
         let isComplete = true;
 
+        // Cache all cells to avoid repeated DOM queries
+        const allCells = document.querySelectorAll('.cell');
+        const cellMap = new Map();
+        allCells.forEach(c => {
+            const r = parseInt(c.dataset.row);
+            const colNum = parseInt(c.dataset.col);
+            const key = `${r},${colNum}`;
+            cellMap.set(key, c);
+        });
+
         for (let i = 0; i < 9; i++) {
             for (let j = 0; j < 9; j++) {
-                const cell = document.querySelector(`.cell[data-row="${i}"][data-col="${j}"]`);
+                const cell = cellMap.get(`${i},${j}`);
                 let value;
                 if (cell.classList.contains('pre-filled')) {
                     value = parseInt(cell.textContent);
@@ -282,22 +308,24 @@ function renderBoard() {
     
     function getHint() {
         const emptyCells = [];
-        for (let i = 0; i < 9; i++) {
-            for (let j = 0; j < 9; j++) {
-                const cell = document.querySelector(`.cell[data-row="${i}"][data-col="${j}"]`);
-                if (!cell.classList.contains('pre-filled') && !cell.querySelector('input').value) {
-                    emptyCells.push({row: i, col: j});
-                }
+        
+        // Cache all cells to avoid repeated DOM queries
+        const allCells = document.querySelectorAll('.cell');
+        
+        allCells.forEach(cell => {
+            const i = parseInt(cell.dataset.row);
+            const j = parseInt(cell.dataset.col);
+            if (!cell.classList.contains('pre-filled') && !cell.querySelector('input')?.value) {
+                emptyCells.push({row: i, col: j, cell: cell});
             }
-        }
+        });
 
         if (emptyCells.length > 0) {
-            const randomCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
-            const { row, col } = randomCell;
-            const hintCell = document.querySelector(`.cell[data-row="${row}"][data-col="${col}"]`);
-            hintCell.querySelector('input').value = solution[row][col];
-            hintCell.classList.add('hint');
-            setTimeout(() => hintCell.classList.remove('hint'), 1000);
+            const randomCellData = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+            const { row, col, cell } = randomCellData;
+            cell.querySelector('input').value = solution[row][col];
+            cell.classList.add('hint');
+            setTimeout(() => cell.classList.remove('hint'), 1000);
         } else {
             alert("No empty cells left to give a hint!");
         }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import Calendar from 'react-calendar';  // Calendar component
 import 'react-calendar/dist/Calendar.css';  // Calendar styles
 import EventForm from './EventForm';  // EventForm component to create/edit events
@@ -15,10 +15,11 @@ const CalendarUI = ({ events, onEventSave }) => {
     setShowEventForm(true);  // Show the event form when a date is selected
   };
 
-  // Get events for selected date
-  const getEventsForSelectedDate = (date) => {
-    return events.filter(event => new Date(event.date).toDateString() === new Date(date).toDateString());
-  };
+  // Memoize events for selected date to avoid recalculating on every render
+  const eventsForSelectedDate = useMemo(() => {
+    if (!selectedDate) return [];
+    return events.filter(event => new Date(event.date).toDateString() === new Date(selectedDate).toDateString());
+  }, [events, selectedDate]);
 
   // Handle saving the event
   const handleSaveEvent = (eventData) => {
@@ -39,7 +40,7 @@ const CalendarUI = ({ events, onEventSave }) => {
           <>
             <h3>Events for {selectedDate.toDateString()}</h3>
             <ul>
-              {getEventsForSelectedDate(selectedDate).map(event => (
+              {eventsForSelectedDate.map(event => (
                 <li key={event.id}>
                   <strong>{event.title}</strong>
                   <p>{event.description}</p>

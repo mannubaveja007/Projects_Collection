@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
 const EventForm = ({ event, onSave }) => {
   // Initial state for the form
@@ -21,14 +21,14 @@ const EventForm = ({ event, onSave }) => {
     }
   }, [event]);
 
-  // Handle form input changes
-  const handleInputChange = (e) => {
+  // Handle form input changes with useCallback to prevent unnecessary re-renders
+  const handleInputChange = useCallback((e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setFormData(prevData => ({
+      ...prevData,
       [name]: value,
-    });
-  };
+    }));
+  }, []);
 
   // Handle form submission
   const handleSubmit = (e) => {

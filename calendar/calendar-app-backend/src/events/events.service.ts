@@ -11,35 +11,37 @@ export interface Event {  // Export the Event interface
 
 @Injectable()
 export class EventsService {
-  private events: Event[] = [];
+  private events: Map<string, Event> = new Map();
 
   createEvent(eventData: Partial<Event>) {
     const newEvent = { id: uuidv4(), ...eventData } as Event;
-    this.events.push(newEvent);
+    this.events.set(newEvent.id, newEvent);
     return newEvent;
   }
 
   getAllEvents() {
-    return this.events;
+    return Array.from(this.events.values());
   }
 
   getEvent(id: string) {
-    return this.events.find(event => event.id === id);
+    return this.events.get(id);
   }
 
   updateEvent(id: string, updatedData: Partial<Event>) {
-    const eventIndex = this.events.findIndex(event => event.id === id);
-    if (eventIndex > -1) {
-      this.events[eventIndex] = { ...this.events[eventIndex], ...updatedData };
-      return this.events[eventIndex];
+    const event = this.events.get(id);
+    if (event) {
+      const updatedEvent = { ...event, ...updatedData };
+      this.events.set(id, updatedEvent);
+      return updatedEvent;
     }
     return null;
   }
 
   deleteEvent(id: string) {
-    const eventIndex = this.events.findIndex(event => event.id === id);
-    if (eventIndex > -1) {
-      return this.events.splice(eventIndex, 1);
+    const event = this.events.get(id);
+    if (event) {
+      this.events.delete(id);
+      return [event];
     }
     return null;
   }

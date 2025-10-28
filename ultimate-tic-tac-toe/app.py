@@ -9,6 +9,7 @@ class UltimateTicTacToe:
         self.scores = {1: 0, -1: 0}  # X and O scores
         self.move_counts = {1: 0, -1: 0}
         self.move_history = []
+        self._cached_legal_moves = None  # Cache for legal moves
         self.reset()
 
     def reset(self):
@@ -18,6 +19,7 @@ class UltimateTicTacToe:
         self.next_subboard = None
         self.move_history = []
         self.move_counts = {1: 0, -1: 0}
+        self._cached_legal_moves = None  # Invalidate cache
         return self.get_state()
 
     def check_winner(self, subboard):
@@ -47,10 +49,15 @@ class UltimateTicTacToe:
                     self.global_board[r, c] = winner
 
     def get_legal_moves(self):
+        # Return cached legal moves if available
+        if self._cached_legal_moves is not None:
+            return self._cached_legal_moves
+        
         legal_moves = []
         
         # Check if the game is already won
         if abs(self.check_winner(self.global_board)) > 0:
+            self._cached_legal_moves = legal_moves
             return legal_moves
             
         # Check if we need to play in a specific sub-board or if we can play anywhere
@@ -72,6 +79,9 @@ class UltimateTicTacToe:
                     if sub[i, j] == 0:
                         global_r, global_c = (self.next_subboard//3)*3 + i, (self.next_subboard%3)*3 + j
                         legal_moves.append((global_r, global_c))
+        
+        # Cache the computed legal moves
+        self._cached_legal_moves = legal_moves
         return legal_moves
 
     def step(self, r, c):
@@ -81,9 +91,12 @@ class UltimateTicTacToe:
         self.move_history.append((r, c, self.current_player, self.next_subboard))
         self.move_counts[self.current_player] += 1
         self.next_subboard = (r % 3) * 3 + (c % 3)
+        self._cached_legal_moves = None  # Invalidate cache after move
         self.update_global_board()
         winner = self.check_winner(self.global_board)
-        done = winner != 0 or len(self.get_legal_moves()) == 0
+        # Recompute legal moves once for checking done state
+        legal_moves = self.get_legal_moves()
+        done = winner != 0 or len(legal_moves) == 0
         if winner != 0:
             self.scores[winner] += 1
         self.current_player *= -1
@@ -97,6 +110,7 @@ class UltimateTicTacToe:
         self.current_player = player
         self.next_subboard = prev_sub
         self.move_counts[player] -= 1
+        self._cached_legal_moves = None  # Invalidate cache after undo
         self.update_global_board()
         return True, self.get_state()
 
