@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class = "logo"><h1>Calculator</h1></div>
+    </nav>
+
+    
+    <main>
+        <div class="Calculator">
+            <input type="text"  id="display" class="display" disabled>
+            <div class="button">
+                <button class=" button clear" onclick="clearDisplay()">AC</button>
+                <button class = "button clear" onclick="appendoperation('+')">+/-</button>
+                <button class = "button clear " onclick="appendoperation('%')">%</button>
+                <button class = "button operator" onclick="appendoperation('/')">/</button>
+
+                <button class = "button" onclick="appendnumber('7')">7</button>
+                <button class = "button" onclick="appendnumber('8')">8</button>
+                <button class = "button" onclick="appendnumber('9')">9</button>
+                <button class = "button operator" onclick="appendoperation('*')">*</button>
+
+                <button class = "button" onclick="appendnumber('4')">4</button>
+                <button class = "button" onclick="appendnumber('5')">5</button>
+                <button class = "button" onclick="appendnumber('6')">6</button>
+                <button class = "button operator" onclick="appendoperation('-')">-</button>
+
+                <button class = "button" onclick="appendnumber('1')">1</button>
+                <button class = "button" onclick="appendnumber('2')">2</button>
+                <button class = "button" onclick="appendnumber('3')">3</button>
+                <button class = "button operator" onclick="appendoperation('+')">+</button>
+
+                <button class = "button" onclick="">]</button>
+                <button class = "button" onclick="appendnumber('0')">0</button>
+                <button class = "button" onclick="">.</button>
+                <button class = "button operator" onclick="calculate()">=</button>
+
+            </div>
+        </div>
+    </main>
+    <footer class = "footer">
+        
+    </footer>
+    <script src="script.js"></script>
+</body>
