@@ -4,15 +4,9 @@ Reflect. Rate. Relive the art that moves you.
 
 MuseMeter is a personal React Single Page Application (SPA) that helps you maintain records of books, movies, poems, and music you’ve experienced. It allows you to log ratings, genres, and personal thoughts, making it easy to revisit and reflect on your journey through art.
 
-## Before You Start
-
-This version of MuseMeter is a simple React SPA with no backend. It uses local storage to save entries.
-
-For a more advanced version, check out MuseMeter 2.0 — a full-stack web application built with the MERN stack (MongoDB, Express.js, React, Node.js).
-
 ## 🚀 Getting Started
 
-In the project directory, you can run:
+In the project sub-directory of MuseMeter, you can run:
 
 npm start → Runs the app in development mode at http://localhost:3000
 .
