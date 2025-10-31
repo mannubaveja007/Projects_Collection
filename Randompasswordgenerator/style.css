@@ -1,0 +1,142 @@
+body{
+    background-color: #34C3BE;
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    font-family: 'Lato',sans-serif;
+}
+.container {
+    width: 100%;
+    max-width: 500px;
+    background-color: gray;
+    border-radius: 1rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    padding: 2rem;
+    margin-bottom: 30px;
+    margin-top: 100px;
+}
+.container1 {
+    width: 100%;
+    max-width: 500px;
+    background-color: gray;
+    border-radius: 1rem;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    padding: 2rem;
+}
+.navbar{
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+}
+.password{
+    position: relative;
+    margin: 1rem 0;
+    padding-top: 0.35rem;
+    border-radius: 1rem;
+    background-color:lightblue ;
+}
+.display {
+    width: 100%;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    padding: 1.15rem 1rem;
+    color: blue;
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 30px;
+    letter-spacing: 1px;
+    padding-right: 3.25rem;
+}
+
+.display::placeholder {
+    position: absolute;
+    top: 50%;
+    left: 1.5rem;
+    font-size: 1.5rem;
+    line-height: 30px;
+    color:red;
+    opacity: 0.65;
+    text-transform: uppercase;
+    transform: translateY(-50%);
+}
+
+.password button{
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.length-Calculator{
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+    
+}
+.length{
+    display: flex;
+    justify-content: center;
+    content: space-between;
+    align-items: center;
+}
+.length p:nth-child(1) {
+    color: black;
+    margin-top: 0%;
+       
+  
+    
+    font-size: 2rem;
+}
+  
+
+.lengthh{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.1rem;
+    margin-bottom: 1rem;
+}
+
+.footer{
+    position: fixed;
+    bottom: 0%;
+    left: 0%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.generatebutton {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: red;
+  color: yellow;
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 30px;
+}
+
+.generatebutton:hover {
+  background-color: #0369a1;
+}
+.option label {
+  font-size: 1.6rem;   /* increase label size */
+  color: white;        /* makes it visible on gray background */
+}
+

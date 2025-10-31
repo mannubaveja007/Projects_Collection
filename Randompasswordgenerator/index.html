@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- ✅ Added lang="en" -->
+<meta charset="UTF-8"> <!-- ✅ Added -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<html>
+
+    <head>
+        <title>Random password Generator </title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="logo"> <h1>Random Password Generator</h1></div>
+            </nav>
+        </header>
+        <main>
+            <div class = "container">
+                <h2>Password Generator</h2>
+                <div class="password">
+                    <input type="text" placeholder="password" class="display" data-passwordDisplay=>
+                    <button class="copy">
+                        <span class="copyy"></span>
+                        <img src="assets/copy.svg" alt="copy" height="23" width="23" />
+                    </button>
+                </div>
+            </div>
+            <div class="container1">
+                <div class = "length-Calculator">
+                    <div class="length">
+                        <p>Password Length</p>
+                    </div>
+                    <div class="lengthh">
+                        <input type="range" min="8" max="24" value="8" step="1" class="slider" data-lengthSlider />
+                        <span>8</span>
+                    </div>
+                    <div class=" options">
+                        <div class="option">
+                            <input type="checkbox" id="uppercase" />
+                            <label for = "uppercase">Include Uppercase letter</label>
+                            
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id="lowercase"/>
+                            <label for = "lowercase">Include Lowercase Letter</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id = "number">
+                            <label for = "number">Include Number</label>
+                        </div>
+                        <div class="option">
+                            <input type="checkbox" id = "symbol">
+                            <label for = "symbol">Include symbol</label>
+                        </div>
+                   
+                        <button class="generatebutton">GeneratePassword</button>
+                </div>    
+            </div>
+
+        </main>
+        <footer class="footer">
+            <h1><a class = "foot" href="https://buymeacoffee.com/buldwithyash">Buy me a Coffee 😀 Click here 😀</a></h1>
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>
